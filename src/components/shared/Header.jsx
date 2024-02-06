@@ -1,8 +1,27 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../Context/AuthProvider";
 import logo from "../../assets/slogo.png";
 import { menus } from "../../utils/navMenus";
 
 const Header = () => {
+
+  const {user , logOutUser} = useContext(AuthContext);
+
+  const handleLogOut = ()=>{
+    logOutUser()
+    .then(()=>{
+      Swal.fire({
+        position: "top",
+        icon: "success",
+        title: "User Logout Successfully",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    })
+  }
+
   return (
     <div className="navbar bg-gray-800 px-10 h-16 text-white">
       <div className="navbar-start">
@@ -45,15 +64,15 @@ const Header = () => {
           className="btn btn-ghost btn-circle avatar mr-5"
         >
           <div className="w-10 rounded-full">
-            <img
+          {user &&  <img
               alt="Tailwind CSS Navbar component"
-              src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-            />
+              src={user.photoURL}
+            />}
           </div>
         </div>
-        <Link to="/login">
+       { user ? <button onClick={handleLogOut} className="btn btn-warning btn-sm">LogOut</button> : <Link to="/login">
           <button className="btn btn-primary btn-sm">Login</button>
-        </Link>
+        </Link>}
       </div>
     </div>
   );
