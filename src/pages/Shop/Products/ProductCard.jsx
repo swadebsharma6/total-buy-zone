@@ -14,10 +14,10 @@ const ProductCard = ({product}) => {
       {seller}
       <div className="badge badge-secondary">{category}</div>
     </h2>
-    <p>{name}</p>
+    <p className="text-xl">{name}</p>
     
     <div className="card-actions flex justify-between items-center">
-    <p>Price: <span className="text-red-500 font-medium">${price}</span></p>
+    <p className="font-bold">Price: <span className="text-red-500 font-medium">${price}</span></p>
     <button>
     <FaArrowRight className="text-xl text-red-600" />
    </button>

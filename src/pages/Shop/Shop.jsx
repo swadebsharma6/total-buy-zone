@@ -16,8 +16,8 @@ useEffect(()=>{
 
     return (
         <section className="px-16 mt-10">
-          <div className="grid lg:grid-cols-3 gap-4">
-            <div className="p-5   md:sticky z-50 top-10">
+          <div className="grid sticky top-0 lg:grid-cols-3 gap-4">
+            <div className="p-5 sticky z-50 top-10">
             <ShoppingCart/>
             </div>
             <div className="lg:col-span-2 p-5 ">

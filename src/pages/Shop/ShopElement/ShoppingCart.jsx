@@ -4,7 +4,7 @@ import { MdDelete } from "react-icons/md";
 
 const ShoppingCart = () => {
     return (
-        <section className="lg:h-screen bg-orange-300 rounded-md p-8">
+        <section className="lg:h-screen bg-gray-300 border-2  rounded-md p-8">
             <h2 className="text-xl text-center font-bold py-4">Order Summary</h2>
             <div className="border border-primary space-y-2 rounded pl-4 mb-16">
              <h5 className="text-lg font-bold">Selected Item:</h5>
