@@ -15,7 +15,7 @@ const Banner = () => {
                 </Link>
             </div>
              <div className='flex-1 ml-5'>
-             <img src={banner} alt="Banner" className='w-[470px]' />
+             <img src={banner} alt="Banner" className='w-[470px] border-l-8 border-b-4 rounded border-orange-500' />
              </div>
             
             </div>
