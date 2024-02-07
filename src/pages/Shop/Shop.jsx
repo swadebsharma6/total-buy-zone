@@ -1,18 +1,12 @@
-import { useEffect, useState } from "react";
 import Products from "./Products/Products";
 import ShoppingCart from "./ShopElement/ShoppingCart";
 
 
 
 const Shop = () => {
-    const [products, setProducts] = useState([]);
+    // const {products, count} = useLoaderData();
 
-useEffect(()=>{
-    fetch('/public/data.json')
-    .then(res => res.json())
-    .then(data => setProducts(data))
-
-}, [])
+   
 
     return (
         <section className="px-16 mt-10">
@@ -21,7 +15,7 @@ useEffect(()=>{
             <ShoppingCart/>
             </div>
             <div className="lg:col-span-2 p-5 ">
-                <Products products={products}/>
+                <Products/>
             </div>
           </div>
         </section>
